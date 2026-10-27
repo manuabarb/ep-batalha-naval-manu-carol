@@ -21,4 +21,13 @@ def preenche_frota(dic_frota, nome_navio, linha, coluna, orientacao, tamanho):
 
     dic_frota[nome_navio].append(navio)
 
-    return dic_frota 
+    return dic_frota
+
+
+def faz_jogada(tabuleiro, linha, coluna): 
+    #return tabuleiro com valores atualizados 
+    if tabuleiro[linha][coluna] == 1: 
+        tabuleiro[linha][coluna] = 'X'
+    else: 
+        tabuleiro[linha][coluna] = '-'
+    return tabuleiro 
