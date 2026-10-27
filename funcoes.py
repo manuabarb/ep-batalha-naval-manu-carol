@@ -21,4 +21,4 @@ def preenche_frota(dic_frota, nome_navio, linha, coluna, orientacao, tamanho):
 
     dic_frota[nome_navio].append(navio)
 
-    return dic_frota
+    return dic_frota 
