@@ -13,8 +13,4 @@ def posiciona_frota(dic):
                 j = coordenada[1]
 
                 tabuleiro[i][j] = 1 
-    return tabuleiro 
-
-        
-
-
+    return tabuleiro
