@@ -1,8 +1,9 @@
 def posicao_valida(dic_info, linha, coluna, orientacao, tamanho):
-    for navio, info in dic_info.items(): 
-        for coordenada in info: 
-            if linha == coordenada[0] or coluna == coordenada[1]: 
-                return False 
+    for posicao in novas_posicoes: 
+        if posicao[0] < 0 or posicao[0] > 9 or posicao[1] > 9: 
+            return False 
+        for navios in dic_info.values(): 
+            for navio in navios: 
+                if posicao in navio:
+                    return False
     return True 
-
-
