@@ -22,14 +22,12 @@ frota_oponente = {
 tabuleiro_oponente = posiciona_frota(frota_oponente)
 tabuleiro_jogador = posiciona_frota(frota)
  
-# total de navios do oponente (10)
 total_navios = 0
 for nome in frota_oponente:
     total_navios += len(frota_oponente[nome])
  
 jogadas_feitas = []
  
-# ---------- Loop principal ----------
 jogando = True
 while jogando:
     print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
