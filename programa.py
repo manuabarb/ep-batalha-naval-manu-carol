@@ -61,7 +61,6 @@ tabuleiro_jogador = posiciona_frota(frota)
 jogando = True
  
 while jogando:
-<<<<<<< HEAD
  
     print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
  
@@ -96,7 +95,7 @@ while jogando:
  
     if afundados(frota_oponente, tabuleiro_oponente) == 10:
         print('Parabéns! Você derrubou todos os navios do seu oponente!')
-=======
+
     print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
 
     repetida = True
@@ -120,5 +119,4 @@ while jogando:
 
     if afundados(frota_oponente, tabuleiro_oponente) == total_navios:
         print("Parabéns! Você derrubou todos os navios do seu oponente!")
->>>>>>> c396cc5b9827ad870bf8c9877dae558358f2af44
         jogando = False
