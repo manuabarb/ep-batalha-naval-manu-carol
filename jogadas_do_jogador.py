@@ -20,9 +20,7 @@ frota_oponente = {
 }
 
 tabuleiro_oponente = posiciona_frota(frota_oponente)
-tabuleiro_jogador = posiciona_frota(dic)
-
-posicoes_informadas = []
+tabuleiro_jogador = posiciona_frota(frota)
 
 jogando = True
 
@@ -42,7 +40,7 @@ while jogando:
         print('Coluna inválida!')
         coluna = int(input('Jogador, qual coluna deseja atacar? '))
 
-    while [linha, coluna] in posicoes_informadas:
+    while tabuleiro_oponente[linha][coluna] == 'X' or tabuleiro_oponente[linha][coluna] == '-':
         print(f'A posição linha {linha} e coluna {coluna} já foi informada anteriormente!')
 
         linha = int(input('Jogador, qual linha deseja atacar? '))
@@ -56,8 +54,6 @@ while jogando:
         while coluna < 0 or coluna > 9:
             print('Coluna inválida!')
             coluna = int(input('Jogador, qual coluna deseja atacar? '))
-
-    posicoes_informadas.append([linha, coluna])
 
     tabuleiro_oponente = faz_jogada(tabuleiro_oponente, linha, coluna)
 
