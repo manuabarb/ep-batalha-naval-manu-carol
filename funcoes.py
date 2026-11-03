@@ -12,18 +12,18 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
         l += 1
         c += 1
     return lista_navio
-
+ 
 def preenche_frota(dic_frota, nome_navio, linha, coluna, orientacao, tamanho):
     navio = define_posicoes(linha, coluna, orientacao, tamanho)
-
+ 
     if nome_navio not in dic_frota:
         dic_frota[nome_navio] = []
-
+ 
     dic_frota[nome_navio].append(navio)
-
+ 
     return dic_frota
-
-
+ 
+ 
 def faz_jogada(tabuleiro, linha, coluna):
     #return tabuleiro com valores atualizados
     if tabuleiro[linha][coluna] == 1:
@@ -31,7 +31,7 @@ def faz_jogada(tabuleiro, linha, coluna):
     else:
         tabuleiro[linha][coluna] = '-'
     return tabuleiro
-
+ 
 def posiciona_frota(dic):
     tabuleiro = []
     for i in range(10):
@@ -45,10 +45,10 @@ def posiciona_frota(dic):
             for coordenada in navio:
                 i = coordenada[0]
                 j = coordenada[1]
-
+ 
                 tabuleiro[i][j] = 1
     return tabuleiro
-
+ 
 def afundados(dic, tabuleiro):
     cont = 0
     for lista in dic:
@@ -60,12 +60,12 @@ def afundados(dic, tabuleiro):
                 j = coordenada[1]
                 if tabuleiro[i][j] != 'X':
                     afundou = False
-
+ 
             if afundou:
                 cont += 1
-
+ 
     return cont
-
+ 
 def posicao_valida(dic_info, linha, coluna, orientacao, tamanho):
     novas_posicoes = define_posicoes(linha, coluna, orientacao, tamanho)
     for posicao in novas_posicoes:
@@ -76,12 +76,12 @@ def posicao_valida(dic_info, linha, coluna, orientacao, tamanho):
                 if posicao in navio:
                     return False
     return True
-
+ 
 def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
     texto = ''
     texto += '   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9\n'
     texto += '_______________________________      _______________________________\n'
-
+ 
     for linha in range(len(tabuleiro_jogador)):
         jogador_info = '  '.join([str(item) for item in tabuleiro_jogador[linha]])
         oponente_info = '  '.join([info if str(info) in 'X-' else '0' for info in tabuleiro_oponente[linha]])
